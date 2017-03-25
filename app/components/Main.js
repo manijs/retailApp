@@ -3,9 +3,9 @@ var React = require('react'),
 
 var Main = React.createClass({
     render : function(){
-        retrun (
+        return (
             <div>
-                Hello World
+                "Hello World"
             </div>    
         )
     }

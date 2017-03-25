@@ -5,7 +5,7 @@ var express = require('express'),
     app = express(),
     fs = require('fs');
  
- app.use("/script", express.static(__dirname + "/public"))
+ app.use("/", express.static(__dirname.replace("/app/server", "") + "/public"))
  
  app.engine('html', function(filePath, options, callback){
      fs.readFile(filePath, function(err, content){
@@ -13,12 +13,12 @@ var express = require('express'),
          return callback(null, content.toString());
      })
  })
- 
- app.set('views', '../../public')
+ console.log(__dirname.replace("/app/server", "") + "/public")
+ app.set('views', './public')
  app.set('view engine', 'html')
  
  app.get('/', function(req, res){
-     res.render('./public/index.html')
+     res.render('index.html')
  })   
 
 
