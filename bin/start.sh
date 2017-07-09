@@ -8,6 +8,8 @@ loop() {
   done 
 }
 
+echo $AMAZON_BESTSELLER_HOST
+
 loop 2 10 &
 sleep 2
 loop 100 120 &
